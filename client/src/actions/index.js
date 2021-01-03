@@ -1,7 +1,7 @@
 import { get } from "axios";
 import axios from "axios";
 import { setToken } from "../components/pages/setToken";
-// import { response } from "express";
+ import { response } from "express";
 
 export const FETCH_ALL = "FETCH_ALL";
 
@@ -161,7 +161,7 @@ export const fetchUser = (email) => {
     dispatch(fetchUserRequest());
     axios.get("/addUser/profile/"+email) 
       .then((response) => {
-        let user = response.data;
+        let user = response.data.username;
         console.log(user,"from client")
         dispatch(fetchUserSuccess(user));
       })

@@ -191,6 +191,7 @@ function Main() {
       <Route exact path="/games/:_id/edit" component={GameEdit} />
       <Route exact path="/chat" component={Chat} />
       <Route exact path="/editProfile/:email" component={ProfileEdit} />
+      
 
       <Route exact path="/profile/:email" render={(props) => <Profile {...props} />} />
       <Route
@@ -198,6 +199,8 @@ function Main() {
         path="/profile/:email"
         render={(props) => <Profile {...props} />}
       />
+            <Route exact path="//login" render={(props) => <Login {...props} />} />
+
       <Route exact path="/login" render={(props) => <Login {...props} />} />
       <Route
         exact
