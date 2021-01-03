@@ -1,7 +1,6 @@
 import { get } from "axios";
 import axios from "axios";
 import { setToken } from "../components/pages/setToken";
- import { response } from "express";
 
 export const FETCH_ALL = "FETCH_ALL";
 
