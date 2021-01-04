@@ -43,7 +43,7 @@ router.put("/profile/editProfile/:email", function (req, res) {
 
 
 //get all user from  database 
-router.get("/addUser", async (req, res) => {
+router.get("/", async (req, res) => {
   AddUser.find()
     .then((profileSchema) => res.json(profileSchema))
     .catch((err) => res.status(400).json("Error: " + err));
