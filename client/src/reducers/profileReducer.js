@@ -6,7 +6,7 @@ import {
 } from "../actions/index";
 
 const initialState = {
-  loading: false,
+  loading: true,
   user: [],
   error: "",
 };
@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
       };
     case FETCH_USER_SUCCESS:
       return {
-        loading: false,
+        loading: true,
         user: action.payload,
         error: "",
       };

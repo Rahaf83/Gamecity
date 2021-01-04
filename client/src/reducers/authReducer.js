@@ -10,7 +10,7 @@ const initialState = {
   token: localStorage.getItem("token"),
   email: localStorage.getItem("email"),
   username: localStorage.getItem("username"),
-  isLoggedIn: false,
+  isLoggedIn: true,
   errors: {},
 };
 const authReducer = (state = initialState, action) => {
