@@ -14,32 +14,32 @@ router.get("/", async (req, res) => {
 
 
 //server side for user
-router.get('/profile/:email', function(req, res) {
-  console.log(req.params,"from route side")
-  AddUser.findOne({email:req.params.email})
-  .then(user => {res.json(user)
-  })
-  .catch(err => res.status(400).json('Error: ' + err));
-});
+// router.get('/profile/:email', function(req, res) {
+//   console.log(req.params,"from route side")
+//   AddUser.findOne({email:req.params.email})
+//   .then(user => {res.json(user)
+//   })
+//   .catch(err => res.status(400).json('Error: ' + err));
+// });
 
-//update user information
+// //update user information
 
-router.put("/profile/editProfile/:email", function (req, res) {
+// router.put("/profile/editProfile/:email", function (req, res) {
 
-  console.log("im the req.body", req.body)
+//   console.log("im the req.body", req.body)
 
-  console.log("email: ", req.params.email)
-  let user = AddUser.find({email: req.params.email});
- user.update(req.body).then(function () {
-    res.json("user updated");    
-    console.log(req.params.email, "after the then")
+//   console.log("email: ", req.params.email)
+//   let user = AddUser.find({email: req.params.email});
+//  user.update(req.body).then(function () {
+//     res.json("user updated");    
+//     console.log(req.params.email, "after the then")
 
-    })
-    .catch(function (err) {
-      res.status(422).send("user update failed");
-      console.log("eerrrrrrrrrrrrrr")
-    });
-});
+//     })
+//     .catch(function (err) {
+//       res.status(422).send("user update failed");
+//       console.log("eerrrrrrrrrrrrrr")
+//     });
+// });
 
 
 //get all user from  database 
