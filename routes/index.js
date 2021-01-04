@@ -17,6 +17,23 @@ router.get('/profile/:email', function(req, res) {
 });
 
 
+router.put("/profile/editProfile/:email", function (req, res) {
+
+  console.log("im the req.body", req.body)
+
+  console.log("email: ", req.params.email)
+  let user = AddUser.find({email: req.params.email});
+ user.update(req.body).then(function () {
+    res.json("user updated");    
+    console.log(req.params.email, "after the then")
+
+    })
+    .catch(function (err) {
+      res.status(422).send("user update failed");
+      console.log("eerrrrrrrrrrrrrr")
+    });
+});
+
 
 
 //Get request to /games returns a JSON array of all game objects found in the database.
