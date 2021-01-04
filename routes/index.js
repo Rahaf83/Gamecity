@@ -16,7 +16,7 @@ router.get('/profile/:email', function(req, res) {
   .catch(err => res.status(400).json('Error: ' + err));
 });
 
-
+//update profile user
 router.put("/profile/editProfile/:email", function (req, res) {
 
   console.log("im the req.body", req.body)
