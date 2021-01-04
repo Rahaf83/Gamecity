@@ -13,11 +13,12 @@ router.get("/", async (req, res) => {
 
 
 
-//server side for admin
+//server side for user
 router.get('/profile/:email', function(req, res) {
   console.log(req.params)
   AddUser.findOne({email:req.params.email})
-  .then(user => res.json(user))
+  .then(user => {res.json(user)
+  })
   .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -69,8 +70,7 @@ router.post("/login", async (req, res) => {
   //create and send a token
   const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
   var decoded = jwt_decode(token);
-  res
-    .header("addUser-token", token, email, username)
+  res.header("addUser-token", token, email, username)
     .json({ token, email, username });
 });
 

@@ -116,17 +116,7 @@ function Navigation() {
                   Games
                 </NavLink>
               </li>
-              {/* <li className="nav-item">
-                <NavLink
-                  exact
-                  className="nav-link"
-                  activeClassName="active"
-                  to="/notifications"
-                  style={{ color: "white" }}
-                >
-                  Notifications
-                </NavLink>
-              </li> */}
+            
               <li className="nav-item">
                 <NavLink
                   exact
@@ -191,7 +181,9 @@ function Main() {
       <Route exact path="/games/:_id/edit" component={GameEdit} />
       <Route exact path="/chat" component={Chat} />
       <Route exact path="/editProfile/:email" component={ProfileEdit} />
-      <Route exact path="/profile/:email" render={(props) => <Profile {...props} />} />
+      {/* <Route exact path="/profile/:email" render={(props) => <Profile {...props} />} /> */}
+      <Route exact path="/profile/:email" component={Profile} />
+
       <Route exact path="/login" render={(props) => <Login {...props} />} />
       <Route
         exact

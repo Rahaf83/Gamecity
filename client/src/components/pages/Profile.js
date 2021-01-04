@@ -13,7 +13,7 @@ function Profile({ userData, fetchUser }) {
   console.log(email);
   useEffect(() => {
     fetchUser(email);
-  }, [ fetchUser]);
+  }, [email, fetchUser]);
 
   return userData.loading ? (
     <h3>Loading</h3>
