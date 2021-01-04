@@ -135,10 +135,10 @@ export function replaceGame(game) {
 
 /////////////////////////////////////////////////////Actions for USER/////////////////////////////////////////////////////
 export const SET_USER = "SET_USER";
-export function setUser(data) {
+export function setUser(user) {
   return {
     type: SET_USER,
-    payload: data,
+    payload: user,
   };
 }
 
@@ -157,7 +157,7 @@ export const fetchUser = (email) => {
   console.log(email,"email from action ")
   return (dispatch) => {
     dispatch(fetchUserRequest());
-    axios.get("/addUser/profile/"+email) 
+    axios.get("/api/profile/"+email) 
       .then((response) => {
         let user = response.data;
         console.log(response ,"response from action")

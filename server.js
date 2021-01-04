@@ -95,4 +95,4 @@ global.authenticateToken = function (req, res, next) {
 };
 
 const addUserRouter = require("./routes/route.js");
-app.use("/addUser", addUserRouter);
+app.use("/api", addUserRouter);
