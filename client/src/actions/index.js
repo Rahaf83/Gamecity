@@ -155,6 +155,7 @@ export function updateProfile(user) {
 //retrive one users in his profile
 export const fetchUser = (email) => {
   console.log(email,"email from action ")
+  
   return (dispatch) => {
     dispatch(fetchUserRequest());
     axios.get("/addUser/profile/"+email) 
