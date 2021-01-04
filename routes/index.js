@@ -4,6 +4,20 @@ const game = require("../models/game");
 const router = express.Router();
 const Game = require("../models/game");
 const mongoose = require("mongoose");
+const AddUser = require("../models/profileSchema");
+
+
+
+router.get('/profile/:email', function(req, res) {
+  console.log("games included routers prfiler",req.params)
+  AddUser.findOne({email:req.params.email})
+  .then(user => {res.json(user)
+  })
+  .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
+
 
 //Get request to /games returns a JSON array of all game objects found in the database.
 router.get("/games", function (req, res) {

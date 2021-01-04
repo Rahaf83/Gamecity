@@ -1,5 +1,5 @@
 const express = require("express");
-const AddUser = require("../models/profileSchema.js");
+const AddUser = require("../models/profileSchema");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 
 //server side for user
 router.get('/profile/:email', function(req, res) {
-  console.log(req.params)
+  console.log(req.params,"from route side")
   AddUser.findOne({email:req.params.email})
   .then(user => {res.json(user)
   })
