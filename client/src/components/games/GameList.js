@@ -93,6 +93,7 @@ function GameList(props) {
                 } else {
                   console.log("no notifications for now")
                 }
+                return null;
               }, null)}
             </div>
             {/* Notifications part done */}
