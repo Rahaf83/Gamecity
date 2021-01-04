@@ -39,7 +39,7 @@ const ProfileEdit = (props) => {
      console.log("user#1", user);
 
       try {
-        await put(`/addUser/profile/editProfile/${props.match.params.email}`, user);
+        await put(`/api/profile/editProfile/${props.match.params.email}`, user);
       } catch(error) {
         console.log(error);
       }
