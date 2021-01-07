@@ -1,6 +1,7 @@
 import { get } from "axios";
 import axios from "axios";
 import { setToken } from "../components/pages/setToken";
+import swal from 'sweetalert';
 
 export const FETCH_ALL = "FETCH_ALL";
 
@@ -242,19 +243,24 @@ export const registerUser = (
       url
     };
     const response = await axios.post("/api", body);
-    window.location = "/login";
-
+  
     dispatch({
       type: REGISTER_SUCCESS,
       payload: response.data.id,
     });
+
     dispatch(loadUser());
   } catch (error) {
     dispatch({
       type: REGISTER_FAILURE,
       payload: error,
     });
+    swal("Hello world!");
+
   }
+
+
+  
 };
 
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
@@ -275,6 +281,8 @@ export const loginUser = (email, password, username) => async (dispatch) => {
       type: LOGIN_FAILURE,
       payload: error,
     });
+    swal("password or email  Wrong");
+
   }
 };
 

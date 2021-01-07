@@ -56,7 +56,7 @@ const Register = ({ registerUser, isLoggedIn}) => {
         }   
     }
     return (
-        <div style={{ textAlign:"center" }} ><form  action="/land"  >
+        <div style={{ textAlign:"center" }} ><form  >
             <h3>Register</h3>
             <input onChange = {(e)=> onChange(e) } type="text" name = "firstName" value={firstName}  required placeholder="first name"></input>
             <br/>
